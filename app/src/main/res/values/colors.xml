@@ -2,8 +2,14 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="primary_text">#FF1976D2</color>
-    <color name="secondary_text">#FF666666</color>
-    <color name="button_color">#FF4CAF50</color>
-    <color name="background_color">#FFF5F5F5</color>
+    <color name="primary_color">#6366f1</color>
+    <color name="accent_color">#f43f5e</color>
+    <color name="bg_main">#0f172a</color>
+    <color name="bg_card">#1e293b</color>
+    <color name="text_main">#f8fafc</color>
+    <color name="text_muted">#94a3b8</color>
+    <color name="calc_display">#1e293b</color>
+    <color name="button_digit">#334155</color>
+    <color name="button_op">#6366f1</color>
+    <color name="button_equal">#f43f5e</color>
 </resources>

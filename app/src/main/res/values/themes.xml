@@ -1,9 +1,37 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.SampleApp" parent="Theme.Material3.DayNight">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.Theme.SampleApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="android:statusBarColor">@color/bg_main</item>
     </style>
 
     <style name="Theme.SampleApp" parent="Base.Theme.SampleApp" />
+
+    <!-- Calculator Button Styles -->
+    <style name="CalcButtonBase" parent="Widget.Material3.Button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="app:cornerRadius">16dp</item>
+    </style>
+
+    <style name="CalcButtonDigit" parent="CalcButtonBase">
+        <item name="backgroundTint">@color/button_digit</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="CalcButtonOp" parent="CalcButtonBase">
+        <item name="backgroundTint">@color/button_op</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="CalcButtonEqual" parent="CalcButtonBase">
+        <item name="backgroundTint">@color/button_equal</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
 </resources>
