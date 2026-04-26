@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import java.util.Stack
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var tvDisplay: TextView
@@ -25,13 +25,16 @@ class MainActivity : AppCompatActivity() {
         )
 
         for (id in buttons) {
-            findViewById<Button>(id).setOnClickListener { onDigitClick((it as Button).text.toString()) }
+            findViewById<Button>(id).setOnClickListener { view -> 
+                val btn = view as Button
+                onDigitClick(btn.text.toString()) 
+            }
         }
 
         findViewById<Button>(R.id.btnAdd).setOnClickListener { onOperatorClick("+") }
         findViewById<Button>(R.id.btnSub).setOnClickListener { onOperatorClick("-") }
-        findViewById<Button>(R.id.btnMul).setOnClickListener { onOperatorClick("×") }
-        findViewById<Button>(R.id.btnDiv).setOnClickListener { onOperatorClick("÷") }
+        findViewById<Button>(R.id.btnMul).setOnClickListener { onOperatorClick("*") }
+        findViewById<Button>(R.id.btnDiv).setOnClickListener { onOperatorClick("/") }
         findViewById<Button>(R.id.btnMod).setOnClickListener { onOperatorClick("%") }
 
         findViewById<Button>(R.id.btnAC).setOnClickListener {
@@ -55,8 +58,8 @@ class MainActivity : AppCompatActivity() {
                 val result = when (operator) {
                     "+" -> firstOperand + secondOperand
                     "-" -> firstOperand - secondOperand
-                    "×" -> firstOperand * secondOperand
-                    "÷" -> if (secondOperand != 0.0) firstOperand / secondOperand else Double.NaN
+                    "*" -> firstOperand * secondOperand
+                    "/" -> if (secondOperand != 0.0) firstOperand / secondOperand else Double.NaN
                     "%" -> firstOperand % secondOperand
                     else -> 0.0
                 }
