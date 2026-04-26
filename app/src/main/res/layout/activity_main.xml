@@ -21,12 +21,12 @@
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <GridLayout
+    <androidx.gridlayout.widget.GridLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="20dp"
-        android:columnCount="4"
-        android:rowCount="5"
+        app:columnCount="4"
+        app:rowCount="5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvDisplay">
 
@@ -118,7 +118,7 @@
         <Button
             android:id="@+id/btn0"
             style="@style/CalcButtonDigit"
-            android:layout_columnSpan="2"
+            app:layout_columnSpan="2"
             android:layout_width="0dp"
             android:layout_gravity="fill_horizontal"
             android:text="0" />
@@ -133,6 +133,6 @@
             style="@style/CalcButtonEqual"
             android:text="=" />
 
-    </GridLayout>
+    </androidx.gridlayout.widget.GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
