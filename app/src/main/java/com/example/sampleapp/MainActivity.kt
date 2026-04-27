@@ -53,13 +53,7 @@ fun MainNavigation() {
         AnimatedContent(
             targetState = currentState,
             transitionSpec = {
-                if (targetState == AppState.HOME_SCREEN && initialState == AppState.LOCK_SCREEN) {
-                    (scaleIn(animationSpec = tween(500)) + fadeIn()).togetherWith(scaleOut() + fadeOut())
-                } else if (targetState == AppState.SETTINGS) {
-                    slideInHorizontally(initialOffsetX = { it }) togetherWith slideOutHorizontally(targetOffsetX = { -it })
-                } else {
-                    slideInHorizontally(initialOffsetX = { -it }) togetherWith slideOutHorizontally(targetOffsetX = { it })
-                }
+                fadeIn(animationSpec = tween(500)) togetherWith fadeOut(animationSpec = tween(500))
             },
             label = "ScreenTransition"
         ) { state ->
