@@ -79,16 +79,16 @@ fun HomeScreen(onOpenSettings: () -> Unit, onLock: () -> Unit) {
                                 .clip(RoundedCornerShape(12.dp))
                                 .background(iOSPink)
                         ) {
-                            Icon(Icons.Default.MusicNote, null, tint = Color.White, modifier = Modifier.align(Alignment.Center))
+                            Icon(Icons.Filled.MusicNote, null, tint = Color.White, modifier = Modifier.align(Alignment.Center))
                         }
                         Spacer(Modifier.width(12.dp))
                         Column(modifier = Modifier.weight(1f)) {
                             Text("Cruel Summer", color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Bold)
                             Text("Taylor Swift", color = Color.Gray, fontSize = 14.sp)
                         }
-                        Icon(Icons.Default.SkipPrevious, null, tint = Color.White)
-                        Icon(Icons.Default.Pause, null, tint = Color.White, modifier = Modifier.size(32.dp))
-                        Icon(Icons.Default.SkipNext, null, tint = Color.White)
+                        Icon(Icons.Filled.SkipPrevious, null, tint = Color.White)
+                        Icon(Icons.Filled.Pause, null, tint = Color.White, modifier = Modifier.size(32.dp))
+                        Icon(Icons.Filled.SkipNext, null, tint = Color.White)
                     }
                 }
             }
@@ -102,12 +102,12 @@ fun HomeScreen(onOpenSettings: () -> Unit, onLock: () -> Unit) {
                     .padding(horizontal = 24.dp),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                IOSWidget(title = "WEATHER", icon = Icons.Default.WbSunny, color = iOSOrange) {
+                IOSWidget(title = "WEATHER", icon = Icons.Filled.WbSunny, color = iOSOrange) {
                     Text("Cupertino", fontSize = 16.sp, fontWeight = FontWeight.Bold)
                     Text("72°", fontSize = 32.sp, fontWeight = FontWeight.Bold)
                     Text("Mostly Sunny", fontSize = 12.sp, color = Color.Gray)
                 }
-                IOSWidget(title = "CALENDAR", icon = Icons.Default.CalendarMonth, color = iOSRed) {
+                IOSWidget(title = "CALENDAR", icon = Icons.Filled.CalendarMonth, color = iOSRed) {
                     Text("TUESDAY", fontSize = 11.sp, fontWeight = FontWeight.Bold, color = iOSRed)
                     Text("26", fontSize = 36.sp, fontWeight = FontWeight.Light)
                     Text("No events", fontSize = 12.sp, color = Color.Gray)
@@ -122,14 +122,14 @@ fun HomeScreen(onOpenSettings: () -> Unit, onLock: () -> Unit) {
                 contentPadding = PaddingValues(16.dp),
                 modifier = Modifier.weight(1f)
             ) {
-                item { IOSAppIcon("Mail", Icons.Default.Email, Brush.linearGradient(listOf(iOSBlue, iOSTeal))) }
-                item { IOSAppIcon("Photos", Icons.Default.Image, Brush.linearGradient(listOf(iOSPink, iOSOrange))) }
+                item { IOSAppIcon("Mail", Icons.Filled.Email, Brush.linearGradient(listOf(iOSBlue, iOSTeal))) }
+                item { IOSAppIcon("Photos", Icons.Filled.Image, Brush.linearGradient(listOf(iOSPink, iOSOrange))) }
                 item { IOSAppIcon("Music", androidx.compose.ui.res.painterResource(R.drawable.music)) }
-                item { IOSAppIcon("Maps", Icons.Default.Map, Brush.linearGradient(listOf(iOSGreen, iOSTeal))) }
-                item { IOSAppIcon("Notes", Icons.Default.Notes, Brush.linearGradient(listOf(iOSYellow, iOSOrange))) }
-                item { IOSAppIcon("Settings", Icons.Default.Settings, Brush.linearGradient(listOf(Color.Gray, Color.DarkGray)), onClick = onOpenSettings) }
+                item { IOSAppIcon("Maps", Icons.Filled.Map, Brush.linearGradient(listOf(iOSGreen, iOSTeal))) }
+                item { IOSAppIcon("Notes", Icons.Filled.Notes, Brush.linearGradient(listOf(iOSYellow, iOSOrange))) }
+                item { IOSAppIcon("Settings", Icons.Filled.Settings, Brush.linearGradient(listOf(Color.Gray, Color.DarkGray)), onClick = onOpenSettings) }
                 item { IOSAppIcon("Safari", androidx.compose.ui.res.painterResource(R.drawable.safari)) }
-                item { IOSAppIcon("Files", Icons.Default.Folder, Brush.linearGradient(listOf(iOSBlue, iOSTeal))) }
+                item { IOSAppIcon("Files", Icons.Filled.Folder, Brush.linearGradient(listOf(iOSBlue, iOSTeal))) }
             }
 
             // Dock
@@ -147,10 +147,10 @@ fun HomeScreen(onOpenSettings: () -> Unit, onLock: () -> Unit) {
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ) {
-                    IOSAppIcon("Phone", Icons.Default.Phone, Brush.linearGradient(listOf(iOSGreen, iOSTeal)))
-                    IOSAppIcon("Messages", Icons.Default.Message, Brush.linearGradient(listOf(iOSGreen, iOSTeal)))
-                    IOSAppIcon("Browser", Icons.Default.Public, Brush.linearGradient(listOf(iOSBlue, iOSTeal)))
-                    IOSAppIcon("Camera", Icons.Default.CameraAlt, Brush.linearGradient(listOf(Color.Gray, Color.DarkGray)))
+                    IOSAppIcon("Phone", Icons.Filled.Phone, Brush.linearGradient(listOf(iOSGreen, iOSTeal)))
+                    IOSAppIcon("Messages", Icons.Filled.Message, Brush.linearGradient(listOf(iOSGreen, iOSTeal)))
+                    IOSAppIcon("Browser", Icons.Filled.Public, Brush.linearGradient(listOf(iOSBlue, iOSTeal)))
+                    IOSAppIcon("Camera", Icons.Filled.CameraAlt, Brush.linearGradient(listOf(Color.Gray, Color.DarkGray)))
                 }
             }
             Spacer(Modifier.navigationBarsPadding())
@@ -184,10 +184,10 @@ fun HomeScreen(onOpenSettings: () -> Unit, onLock: () -> Unit) {
                 ) {
                     Column {
                         Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                            ControlCenterToggle(Icons.Default.Wifi, "WiFi", true)
-                            ControlCenterToggle(Icons.Default.Bluetooth, "BT", true)
-                            ControlCenterToggle(Icons.Default.AirplanemodeActive, "Plane", false)
-                            ControlCenterToggle(Icons.Default.FlashlightOn, "Torch", false)
+                            ControlCenterToggle(Icons.Filled.Wifi, "WiFi", true)
+                            ControlCenterToggle(Icons.Filled.Bluetooth, "BT", true)
+                            ControlCenterToggle(Icons.Filled.AirplanemodeActive, "Plane", false)
+                            ControlCenterToggle(Icons.Filled.FlashlightOn, "Torch", false)
                         }
                         Spacer(Modifier.height(16.dp))
                         Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
@@ -200,7 +200,7 @@ fun HomeScreen(onOpenSettings: () -> Unit, onLock: () -> Unit) {
                                     .padding(horizontal = 12.dp),
                                 contentAlignment = Alignment.CenterStart
                             ) {
-                                Icon(Icons.Default.WbSunny, contentDescription = null, tint = Color.White)
+                                Icon(Icons.Filled.WbSunny, contentDescription = null, tint = Color.White)
                                 Box(modifier = Modifier.fillMaxWidth(0.6f).fillMaxHeight().background(Color.White.copy(alpha = 0.5f)))
                             }
                             Spacer(Modifier.width(16.dp))
@@ -213,7 +213,7 @@ fun HomeScreen(onOpenSettings: () -> Unit, onLock: () -> Unit) {
                                     .padding(horizontal = 12.dp),
                                 contentAlignment = Alignment.CenterStart
                             ) {
-                                Icon(Icons.Default.VolumeUp, contentDescription = null, tint = Color.White)
+                                Icon(Icons.Filled.VolumeUp, contentDescription = null, tint = Color.White)
                                 Box(modifier = Modifier.fillMaxWidth(0.4f).fillMaxHeight().background(Color.White.copy(alpha = 0.5f)))
                             }
                         }
