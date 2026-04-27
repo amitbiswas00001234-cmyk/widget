@@ -29,6 +29,38 @@ fun IOSAppIcon(
     bgBrush: Brush,
     onClick: () -> Unit = {}
 ) {
+    IOSAppIcon(name, onClick) {
+        Box(modifier = Modifier.fillMaxSize().background(bgBrush))
+        Icon(
+            imageVector = icon,
+            contentDescription = name,
+            tint = Color.White,
+            modifier = Modifier.size(32.dp)
+        )
+    }
+}
+
+@Composable
+fun IOSAppIcon(
+    name: String,
+    painter: androidx.compose.ui.graphics.painter.Painter,
+    onClick: () -> Unit = {}
+) {
+    IOSAppIcon(name, onClick) {
+        androidx.compose.foundation.Image(
+            painter = painter,
+            contentDescription = name,
+            modifier = Modifier.fillMaxSize()
+        )
+    }
+}
+
+@Composable
+private fun IOSAppIcon(
+    name: String,
+    onClick: () -> Unit,
+    content: @Composable BoxScope.() -> Unit
+) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
@@ -38,16 +70,10 @@ fun IOSAppIcon(
         Box(
             modifier = Modifier
                 .size(60.dp)
-                .clip(RoundedCornerShape(14.dp))
-                .background(bgBrush),
+                .clip(RoundedCornerShape(14.dp)),
             contentAlignment = Alignment.Center
         ) {
-            Icon(
-                imageVector = icon,
-                contentDescription = name,
-                tint = Color.white,
-                modifier = Modifier.size(32.dp)
-            )
+            content()
         }
         Spacer(modifier = Modifier.height(4.dp))
         Text(
