@@ -37,9 +37,32 @@ fun LockScreen(onUnlock: () -> Unit) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .padding(vertical = 60.dp),
-        contentAlignment = Alignment.TopCenter
     ) {
+        // Status Bar
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .statusBarsPadding()
+                .padding(horizontal = 24.dp, vertical = 4.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text("9:41", color = Color.White, fontSize = 14.sp, fontWeight = FontWeight.Bold)
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Icon(Icons.Default.SignalCellularAlt, null, tint = Color.White, modifier = Modifier.size(16.dp))
+                Spacer(Modifier.width(4.dp))
+                Icon(Icons.Default.Wifi, null, tint = Color.White, modifier = Modifier.size(16.dp))
+                Spacer(Modifier.width(4.dp))
+                Icon(Icons.Default.BatteryFull, null, tint = Color.White, modifier = Modifier.size(20.dp))
+            }
+        }
+
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(vertical = 60.dp),
+            contentAlignment = Alignment.TopCenter
+        ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Text(
                 text = currentDate.uppercase(),

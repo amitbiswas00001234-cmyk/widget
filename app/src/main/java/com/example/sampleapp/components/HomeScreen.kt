@@ -25,6 +25,7 @@ import com.example.sampleapp.ui.theme.*
 @Composable
 fun HomeScreen(onOpenSettings: () -> Unit, onLock: () -> Unit) {
     var showControlCenter by remember { mutableStateOf(false) }
+    var isIslandExpanded by remember { mutableStateOf(false) }
     
     Box(modifier = Modifier.fillMaxSize()) {
         // Main Content
@@ -33,17 +34,63 @@ fun HomeScreen(onOpenSettings: () -> Unit, onLock: () -> Unit) {
                 .fillMaxSize()
                 .statusBarsPadding()
         ) {
+            // iOS Status Bar
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 24.dp, vertical = 4.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text("9:41", color = Color.White, fontSize = 14.sp, fontWeight = FontWeight.Bold)
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Icon(Icons.Default.SignalCellularAlt, null, tint = Color.White, modifier = Modifier.size(16.dp))
+                    Spacer(Modifier.width(4.dp))
+                    Icon(Icons.Default.Wifi, null, tint = Color.White, modifier = Modifier.size(16.dp))
+                    Spacer(Modifier.width(4.dp))
+                    Icon(Icons.Default.BatteryFull, null, tint = Color.White, modifier = Modifier.size(20.dp))
+                }
+            }
+
             // Dynamic Island
-            Spacer(Modifier.height(10.dp))
+            Spacer(Modifier.height(4.dp))
             Box(
                 modifier = Modifier
-                    .width(120.dp)
-                    .height(35.dp)
-                    .clip(CircleShape)
+                    .animateContentSize(animationSpec = spring(dampingRatio = Spring.DampingRatioLowBouncy))
+                    .width(if (isIslandExpanded) 340.dp else 120.dp)
+                    .height(if (isIslandExpanded) 80.dp else 35.dp)
+                    .clip(if (isIslandExpanded) RoundedCornerShape(30.dp) else CircleShape)
                     .background(Color.Black)
                     .align(Alignment.CenterHorizontally)
-                    .clickable { onLock() } // Tap island to lock for now
-            )
+                    .clickable { isIslandExpanded = !isIslandExpanded }
+                    .padding(if (isIslandExpanded) 12.dp else 0.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                if (isIslandExpanded) {
+                    Row(
+                        modifier = Modifier.fillMaxSize(),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        // Album Art
+                        Box(
+                            modifier = Modifier
+                                .size(56.dp)
+                                .clip(RoundedCornerShape(12.dp))
+                                .background(iOSPink)
+                        ) {
+                            Icon(Icons.Default.MusicNote, null, tint = Color.White, modifier = Modifier.align(Alignment.Center))
+                        }
+                        Spacer(Modifier.width(12.dp))
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text("Cruel Summer", color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                            Text("Taylor Swift", color = Color.Gray, fontSize = 14.sp)
+                        }
+                        Icon(Icons.Default.SkipPrevious, null, tint = Color.White)
+                        Icon(Icons.Default.Pause, null, tint = Color.White, modifier = Modifier.size(32.dp))
+                        Icon(Icons.Default.SkipNext, null, tint = Color.White)
+                    }
+                }
+            }
 
             Spacer(Modifier.height(40.dp))
 
