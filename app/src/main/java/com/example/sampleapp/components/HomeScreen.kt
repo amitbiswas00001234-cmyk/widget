@@ -1,5 +1,6 @@
 package com.example.sampleapp.components
 
+import com.example.sampleapp.R
 import androidx.compose.animation.*
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.*

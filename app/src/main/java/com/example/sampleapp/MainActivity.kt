@@ -14,6 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.core.view.WindowCompat
+import com.example.sampleapp.R
 import com.example.sampleapp.components.*
 import com.example.sampleapp.ui.theme.*
 
