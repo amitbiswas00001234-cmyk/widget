@@ -54,8 +54,7 @@ fun MainNavigation() {
             targetState = currentState,
             transitionSpec = {
                 fadeIn(animationSpec = tween(500)) with fadeOut(animationSpec = tween(500))
-            },
-            label = "ScreenTransition"
+            }
         ) { state ->
             when (state) {
                 AppState.LOCK_SCREEN -> {
