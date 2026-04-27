@@ -36,7 +36,7 @@ fun SettingsScreen(onBack: () -> Unit) {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Icon(
-                Icons.Default.ChevronLeft,
+                Icons.Filled.ChevronLeft,
                 contentDescription = "Back",
                 tint = iOSBlue,
                 modifier = Modifier
@@ -58,11 +58,11 @@ fun SettingsScreen(onBack: () -> Unit) {
             item {
                 SettingsSection(
                     listOf(
-                        SettingsItemData("Airplane Mode", Icons.Default.AirplanemodeActive, iOSOrange),
-                        SettingsItemData("Wi-Fi", Icons.Default.Wifi, iOSBlue, "HomeNet"),
-                        SettingsItemData("Bluetooth", Icons.Default.Bluetooth, iOSBlue, "On"),
-                        SettingsItemData("Mobile Data", Icons.Default.NetworkCell, iOSGreen),
-                        SettingsItemData("Personal Hotspot", Icons.Default.Link, iOSGreen)
+                        SettingsItemData("Airplane Mode", Icons.Filled.AirplanemodeActive, iOSOrange),
+                        SettingsItemData("Wi-Fi", Icons.Filled.Wifi, iOSBlue, "HomeNet"),
+                        SettingsItemData("Bluetooth", Icons.Filled.Bluetooth, iOSBlue, "On"),
+                        SettingsItemData("Mobile Data", Icons.Filled.NetworkCell, iOSGreen),
+                        SettingsItemData("Personal Hotspot", Icons.Filled.Link, iOSGreen)
                     )
                 )
             }
@@ -70,10 +70,10 @@ fun SettingsScreen(onBack: () -> Unit) {
             item {
                 SettingsSection(
                     listOf(
-                        SettingsItemData("Notifications", Icons.Default.Notifications, iOSRed),
-                        SettingsItemData("Sounds & Haptics", Icons.Default.VolumeUp, iOSRed),
-                        SettingsItemData("Focus", Icons.Default.DarkMode, iOSPurple),
-                        SettingsItemData("Screen Time", Icons.Default.HourglassBottom, iOSPurple)
+                        SettingsItemData("Notifications", Icons.Filled.Notifications, iOSRed),
+                        SettingsItemData("Sounds & Haptics", Icons.Filled.VolumeUp, iOSRed),
+                        SettingsItemData("Focus", Icons.Filled.DarkMode, iOSPurple),
+                        SettingsItemData("Screen Time", Icons.Filled.HourglassBottom, iOSPurple)
                     )
                 )
             }
@@ -81,10 +81,10 @@ fun SettingsScreen(onBack: () -> Unit) {
             item {
                 SettingsSection(
                     listOf(
-                        SettingsItemData("General", Icons.Default.Settings, Color.Gray),
-                        SettingsItemData("Control Center", Icons.Default.Tune, Color.Gray),
-                        SettingsItemData("Display & Brightness", Icons.Default.WbSunny, iOSBlue),
-                        SettingsItemData("Home Screen", Icons.Default.Apps, iOSBlue)
+                        SettingsItemData("General", Icons.Filled.Settings, Color.Gray),
+                        SettingsItemData("Control Center", Icons.Filled.Tune, Color.Gray),
+                        SettingsItemData("Display & Brightness", Icons.Filled.WbSunny, iOSBlue),
+                        SettingsItemData("Home Screen", Icons.Filled.Apps, iOSBlue)
                     )
                 )
             }
@@ -142,6 +142,6 @@ fun SettingsItem(item: SettingsItemData) {
         if (item.value != null) {
             Text(item.value, fontSize = 17.sp, color = Color.Gray, modifier = Modifier.padding(end = 8.dp))
         }
-        Icon(Icons.Default.ChevronRight, contentDescription = null, tint = Color.LightGray, modifier = Modifier.size(20.dp))
+        Icon(Icons.Filled.ChevronRight, contentDescription = null, tint = Color.LightGray, modifier = Modifier.size(20.dp))
     }
 }
