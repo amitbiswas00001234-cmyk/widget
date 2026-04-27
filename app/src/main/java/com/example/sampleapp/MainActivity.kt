@@ -53,7 +53,7 @@ fun MainNavigation() {
         AnimatedContent(
             targetState = currentState,
             transitionSpec = {
-                fadeIn(animationSpec = tween(500)) togetherWith fadeOut(animationSpec = tween(500))
+                fadeIn(animationSpec = tween(500)) with fadeOut(animationSpec = tween(500))
             },
             label = "ScreenTransition"
         ) { state ->
