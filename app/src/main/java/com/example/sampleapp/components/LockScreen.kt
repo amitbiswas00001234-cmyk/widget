@@ -5,9 +5,8 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.CameraAlt
-import androidx.compose.material.icons.filled.FlashlightOn
+import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.rounded.*
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
@@ -49,11 +48,11 @@ fun LockScreen(onUnlock: () -> Unit) {
         ) {
             Text("9:41", color = Color.White, fontSize = 14.sp, fontWeight = FontWeight.Bold)
             Row(verticalAlignment = Alignment.CenterVertically) {
-                Icon(Icons.Default.SignalCellularAlt, null, tint = Color.White, modifier = Modifier.size(16.dp))
+                Icon(Icons.Filled.SignalCellularAlt, null, tint = Color.White, modifier = Modifier.size(16.dp))
                 Spacer(Modifier.width(4.dp))
-                Icon(Icons.Default.Wifi, null, tint = Color.White, modifier = Modifier.size(16.dp))
+                Icon(Icons.Filled.Wifi, null, tint = Color.White, modifier = Modifier.size(16.dp))
                 Spacer(Modifier.width(4.dp))
-                Icon(Icons.Default.BatteryFull, null, tint = Color.White, modifier = Modifier.size(20.dp))
+                Icon(Icons.Filled.BatteryFull, null, tint = Color.White, modifier = Modifier.size(20.dp))
             }
         }
 
@@ -104,13 +103,13 @@ fun LockScreen(onUnlock: () -> Unit) {
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                LockActionButton(icon = Icons.Default.FlashlightOn)
+                LockActionButton(icon = Icons.Filled.FlashlightOn)
                 Text(
                     text = "Swipe up to unlock",
                     color = Color.White.copy(alpha = 0.7f),
                     fontSize = 14.sp
                 )
-                LockActionButton(icon = Icons.Default.CameraAlt)
+                LockActionButton(icon = Icons.Filled.CameraAlt)
             }
         }
     }

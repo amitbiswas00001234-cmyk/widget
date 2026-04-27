@@ -45,11 +45,11 @@ fun HomeScreen(onOpenSettings: () -> Unit, onLock: () -> Unit) {
             ) {
                 Text("9:41", color = Color.White, fontSize = 14.sp, fontWeight = FontWeight.Bold)
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    Icon(Icons.Default.SignalCellularAlt, null, tint = Color.White, modifier = Modifier.size(16.dp))
+                    Icon(Icons.Filled.SignalCellularAlt, null, tint = Color.White, modifier = Modifier.size(16.dp))
                     Spacer(Modifier.width(4.dp))
-                    Icon(Icons.Default.Wifi, null, tint = Color.White, modifier = Modifier.size(16.dp))
+                    Icon(Icons.Filled.Wifi, null, tint = Color.White, modifier = Modifier.size(16.dp))
                     Spacer(Modifier.width(4.dp))
-                    Icon(Icons.Default.BatteryFull, null, tint = Color.White, modifier = Modifier.size(20.dp))
+                    Icon(Icons.Filled.BatteryFull, null, tint = Color.White, modifier = Modifier.size(20.dp))
                 }
             }
 
